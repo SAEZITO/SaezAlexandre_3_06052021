@@ -51,7 +51,7 @@ nav
 .iconposition
 {
     position: relative;
-    left: 15px;
+    left: 20px;
 }
 .iconsearch
 {
@@ -78,7 +78,7 @@ input::placeholder
 .fas
 {
     font-size: 1.2rem;
-    padding: 0.5rem;
+    padding: 0;
 }
 .reserver
 {   
@@ -144,7 +144,7 @@ input::placeholder
 }
 .fonctcontent>i
 {
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     color: #7e7e7e;
 }
 .fonctcontent>span
@@ -227,27 +227,43 @@ img
 .cardfooter
 {
     display: flex;
+    justify-content: space-between;
     margin: 0;
     padding: 0.5rem;
-    padding: 1rem;
     background-color: white;
     border-radius: 0 0 1rem 1rem;
+    position: relative;
 }
 .cardinfo
 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     color: black;
+    padding: 0;
+    margin: 0 0 0.5rem 0.5rem;
+}
+.cardinfo>p
+{
+    margin: 0;
+    padding: 0;
 }
 .like
 {
-
+    color: #99E2D0;
 }
 .like>i
 {
-    font-size: 2rem;
+    font-size: 2rem;    
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+}
+.like>span>i
+{
+    font-size: 2rem;    
+    position: absolute;
+    top: 1rem;
 }
 .flatbg
 {
@@ -276,16 +292,36 @@ img
     transform: scale(1.20);
     transition-duration: 500ms;
 }
-
-
+.fa-stack:hover>.flat
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 500ms;
+    transform: scale(1.20)
+}
+.fa-stack:hover>.flatbg
+{
+    display: block;
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.20);
+    transition-duration: 500ms;
+    top: 1rem;
+}
 .fa-stack
 {
-    font-size: 2.5rem;
-    right: 1rem;
 }
+.fa-stack:nthchild(2)
+{
+    display: none;
+}
+
 h3
 {
-    margin: 0;
+    margin: 0.5rem 0;
 }
 
 .resto>a
@@ -336,24 +372,14 @@ footer a:link
     color: white;
 }
 
-/*----------reponsive mobile--------*/
+/*----------reponsive tablette--------*/
 
-@media all and (max-width: 874px)
+@media all and (min-width: 874px)
 
 {
-    .gridfonc
-{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    row-gap: 1rem;
-}
-.gridresto
-{
-    grid-template-columns: 1fr;
-}
+
 h3
 {
-    margin: 0;
 }
 
 }
