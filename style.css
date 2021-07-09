@@ -74,10 +74,6 @@ input::placeholder
     opacity: 1;
     background-color: #F3F3F3;
 }
-input::focus-visible
-{
-    border-color: green;
-}
 .fas
 {
     padding: 0;
@@ -284,7 +280,7 @@ img
     transition-duration: 500ms;
 }
 
-.fa-stack:active>.flat
+.fa-stack:hover>.flat
 {
     background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
     -webkit-background-clip: text;
@@ -292,7 +288,7 @@ img
     transition-duration: 500ms;
     transform: scale(1.20)
 }
-.fa-stack:active>.flatbg
+.fa-stack:hover>.flatbg
 {
     display: block;
     opacity: 1;
@@ -348,21 +344,25 @@ footer a:link
 
 /*essaie d'animation*/
 .loader {
+  position: fixed;
+  text-align: center;
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
+  transition-duration: 2s;
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+  transition-duration: 2s;
 }
 .load {
-    position: fixed;
-    z-index: 2; 
+    position: relative;
+    z-index: 1; 
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -387,7 +387,6 @@ footer a:link
         animation: spin 1200ms cubic-bezier(.4,0,.08,1) infinite; 
         border-color: $color-primary transparent $color-secondary transparent;
     }    
-      
 }
 
 @keyframes spin {
@@ -421,7 +420,7 @@ footer a:link
 /*----------reponsive tablette & desktop--------*/
 
 @media all and (min-width: 874px)
-
+²   
 {
 
 .searchbar
