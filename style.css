@@ -47,11 +47,11 @@ nav
     padding: 1rem;
     align-self: center;
     opacity: 0.6;
+    position: relative;
+    left: 1rem;
 }
 .iconposition
 {
-    position: relative;
-    left: 20px;
 }
 .iconsearch
 {
@@ -63,17 +63,20 @@ nav
 .textposition
 {
     border: none;
-    padding: 0;
 }
 input::placeholder
 {
     font-family: "Roboto", Arial, Verdana, sans-serif;
     font-weight: bold;
-    text-align: center;
     margin: 0;
+    padding: 0;
     color: black;
     opacity: 1;
     background-color: #F3F3F3;
+}
+input::focus-visible
+{
+    border-color: green;
 }
 .fas
 {
@@ -130,7 +133,7 @@ input::placeholder
     margin: 0.5rem;    
     display: flex;
     align-items: center;
-    min-width: calc(100% - 2rem);
+    width: calc(100% - 2rem);
 }
 .fonctcontent:hover
 {
@@ -174,6 +177,7 @@ input::placeholder
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 .resto
 {
@@ -181,6 +185,11 @@ input::placeholder
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.resto a
+{
+    display: flex;
+    width: 100%;
 }
 
 .card
@@ -252,63 +261,10 @@ img
 {
     color: #99E2D0;
 }
-.like>i
-{
-    font-size: 2rem;    
-    position: absolute;
-    top: 1.5rem;
-    right: 1rem;
-}
 .like>span>i
 {
     font-size: 2rem;    
     position: absolute;
-    top: 1rem;
-}
-.flatbg
-{
-    opacity: 0;
-    transition-duration: 500ms;
-}
-.flat
-{
-    transition-duration: 500ms;
-}
-.like:hover>.flat
-{
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition-duration: 500ms;
-    transform: scale(1.20)
-}
-.like:hover>.flatbg
-{
-    display: block;
-    opacity: 1;
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.20);
-    transition-duration: 500ms;
-}
-.fa-stack:hover>.flat
-{
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition-duration: 500ms;
-    transform: scale(1.20)
-}
-.fa-stack:hover>.flatbg
-{
-    display: block;
-    opacity: 1;
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.20);
-    transition-duration: 500ms;
     top: 1rem;
 }
 .fa-stack
@@ -318,20 +274,40 @@ img
 {
     display: none;
 }
+.flatbg
+{
+    opacity: 0;
+    transition-duration: 200ms;
+}
+.flat
+{
+    transition-duration: 500ms;
+}
+
+.fa-stack:active>.flat
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 500ms;
+    transform: scale(1.20)
+}
+.fa-stack:active>.flatbg
+{
+    display: block;
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.20);
+    transition-duration: 500ms;
+    top: 1rem;
+}
 
 h3
 {
     margin: 0.5rem 0;
     font-size: 1.2rem;
-}
-
-.resto>a
-
-{
-    display: flex;
-    flex-direction: column;
-    border-radius: 1rem;
-    box-shadow: 3px 3px 10px #CCCCCC;
 }
 
 
@@ -341,46 +317,137 @@ footer
     margin: auto;
     padding: 2rem;
 }
+footer p
+{
+    margin: 0.5rem;
+}
+footer a:link
+{
+    color: white;
+}
 .footlogo
 {
     font-family: 'Shrikhand';
     color: white;
 }
-footer p
-{
-    margin: 0.5rem;
-}
-.contentlink
+.footlink
 {
     display: flex;
     align-items: center;
-}
-.footlink
-{
     color: white;
 }
 .footer_icon
 {
     width: 1.5rem;
 }
-.footercontent
-{
-    max-width: 80rem;
-    margin: auto;
-}
-footer a:link
-{
-    color: white;
+
+
+
+
+
+
+/*essaie d'animation*/
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
 
-/*----------reponsive tablette--------*/
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.load {
+    position: fixed;
+    z-index: 2; 
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $light-grey;
+    @include flexbox(column, center, center, unset);
+    animation: fadeout 3s forwards;
+    &__food {
+        width: 180px;
+        animation: cloche 1200ms ease-in-out alternate infinite;
+        position: relative;  
+    }
+    &__spinner {
+        width: 30px;
+        height: 30px;
+        margin: 50px;
+        background-color: lighten($color-tertiary,10%);
+        border: $color-primary solid 3px;
+        border-radius: 50%;
+        animation: spin 1200ms cubic-bezier(.4,0,.08,1) infinite; 
+        border-color: $color-primary transparent $color-secondary transparent;
+    }    
+      
+}
+
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+@keyframes fadeout { 
+   80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes cloche {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(15px);
+    }
+}
+
+/*----------reponsive tablette & desktop--------*/
 
 @media all and (min-width: 874px)
 
 {
 
-h3
+.searchbar
 {
+    padding: 2rem;
 }
-
+.fonctcontent
+{
+    width: calc(33% - 3rem);
+}
+.fonct
+{
+    margin-top: 2rem;
+}
+.card
+{
+    width: calc(40% - 2rem);
+    height: 50%;
+    margin: 1rem;
+}
+.cardimg
+{
+    height: 15rem;
+}
+section>h2
+{
+    text-align: center;
+}
 }
