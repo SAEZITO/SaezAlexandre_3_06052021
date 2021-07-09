@@ -372,23 +372,7 @@ footer a:link
     background: grey;
     @include flexbox(column, center, center, unset);
     animation: fadeout 3s forwards;
-    &__food {
-        width: 180px;
-        animation: cloche 1200ms ease-in-out alternate infinite;
-        position: relative;  
-    }
-    &__spinner {
-        width: 30px;
-        height: 30px;
-        margin: 50px;
-        background-color: lighten($color-tertiary,10%);
-        border: green solid 3px;
-        border-radius: 50%;
-        animation: spin 1200ms cubic-bezier(.4,0,.08,1) infinite; 
-        border-color: navy transparent cyan transparent;
-    }    
 }
-
 @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -447,4 +431,7 @@ section>h2
 {
     text-align: center;
 }
+
+
+
 }
