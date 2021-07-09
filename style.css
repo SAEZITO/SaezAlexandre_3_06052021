@@ -419,8 +419,7 @@ footer a:link
 
 /*----------reponsive tablette & desktop--------*/
 
-@media all and (min-width: 874px)  
-{
+@media all and (min-width: 874px) {
 
 .searchbar
 {
