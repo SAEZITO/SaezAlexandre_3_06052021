@@ -60,11 +60,7 @@ body
         z-index: -1;
     }
 }
-::placeholder
-{
-    font-weight: bold;
-    color: black;
-}
+
 
 a:link
 {
@@ -106,7 +102,7 @@ nav
 {
     padding: 1rem;
     align-self: center;
-    opacity: 0.8;
+    opacity: 1;
     position: relative;
     left: 2rem;
 }
@@ -402,7 +398,7 @@ footer a:link
 
 .card
 {
-    animation: apparition 7s;
+    animation: apparition 9s;
 }
 
 @keyframes apparition
