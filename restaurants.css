@@ -62,6 +62,7 @@ section
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: #99E2D0;
 }
 .like>i
 {

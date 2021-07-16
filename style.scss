@@ -2,7 +2,312 @@ $cd__primary: #9256DC;
 $cd__second: #FF79DA;
 $cd__third: #99E2D0;
 
+body
+{
+    font-family: 'Roboto', Arial, Verdana, sans-serif;
+    margin: 0;
+}
+a:link
+{
+    text-decoration: none;
+    cursor: pointer;
+}
 
+header
+{
+    position: relative;
+    padding: 1rem;
+
+  .back
+    {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 2rem;
+    top: 1.75rem;
+    color: black;
+    }
+.titre
+{
+    font-family: 'Shrikhand';
+    text-align: center;
+    margin: 0;
+}
+.image
+{
+    width: 100%;
+    max-height: 30rem;
+    object-fit: cover;
+    z-index: -1;
+}
+}
+section
+{
+    margin: -5rem 0 0 0;
+    border-radius: 3rem 3rem 0 0;
+    background-color: #f6f6f6;
+    padding: 0 2rem 3rem 2rem;
+}
+.headcontent
+{
+    display: flex;
+    align-items: center;
+    font-family: 'Shrikhand';
+    font-size: 1rem;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.like
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.like>i
+{
+    position: absolute;
+    font-size: 2rem;
+}
+.flatbg
+{
+    opacity: 0;
+    transition-duration: 500ms;
+}
+.flat
+{
+    transition-duration: 500ms;
+}
+.like:hover>.flat
+{
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition-duration: 500ms;
+    transform: scale(1.20)
+}
+.like:hover>.flatbg
+{
+    display: block;
+    opacity: 1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.20);
+    transition-duration: 500ms;
+}
+.cardcontent
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.column
+{
+    width: 100%;
+    padding: 0;
+}
+h3
+{
+    font-weight: 400;
+    border-bottom: 3px solid #99E2D0;
+    width: 4rem;
+    position: relative;
+    bottom: 1rem;
+}
+.menu
+{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: white;
+    box-shadow: 2px 2px 6px #cccccc;
+    border-radius: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    max-width: 100%;
+    transition-duration: 300ms;
+}
+.cardinfo
+{
+    display: flex;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+.cardinfo>div>h4
+{
+    margin: 0;
+    max-width: 100%;
+    white-space: nowrap; /*pas de retour ligne*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardinfo>div>p
+{
+    margin: 0;
+    max-width: 100%;
+    white-space: nowrap; /*pas de retour ligne*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cardinfo>:nth-child(1)
+{
+    max-width: 100%;
+    white-space: nowrap; /*pas de retour ligne*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.prix
+{
+    display: flex;
+    align-items: flex-end;
+    margin-right: 0.5rem;
+}
+
+/*-------animations apparitions des menus-------*/
+
+.entrees
+{
+    animation: apparition 2s;
+}
+.plats
+{
+    animation: apparition 3s;
+}
+.desserts
+{
+    animation: apparition 4s;
+}
+@keyframes apparition
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%
+    {
+        opacity: 1;
+        transform: scale(105%);
+    }
+    100%
+    {
+        transform: scale(100%);
+    }
+}
+/*--------animations slider des menus-------*/
+
+.selectmenu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #99E2D0;
+    margin: -1rem -5rem -1rem -1rem;
+    width: 4rem;
+    transition-duration: .5s;
+}
+.menu:hover>.selectmenu
+{
+    transition-duration: .5s;
+    margin: -1rem -1rem -1rem 0rem;
+}
+.menu:hover>.selectmenu>i
+{
+    transform: rotate(0deg);
+    transition-duration: .7s;
+}
+.fa-check
+{
+    color: #99E2D0;
+    border-radius: 100%;
+    background-color: white;
+    padding: 0.2rem;
+    transform: rotate(360deg);
+    transition-duration: .7s;
+}
+
+
+
+
+
+
+.command
+{
+    text-align: center;
+    margin: 2rem 0 2rem 0;
+    position: relative;
+    top: 1rem;
+}
+.btncommand:hover
+{
+    transition-duration: 1s;
+    box-shadow: 4px 4px 2px #909090;
+    background-image: linear-gradient(0deg,rgba(255,121,218,.9),rgba(255,153,227,.9));
+}
+.btncommand
+{
+    color: white;
+    border-radius: 2rem;
+    padding: 0.75rem 1rem;
+    box-shadow: 3px 3px 4px #cccccc;
+    background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
+}
+
+
+footer
+{
+    background-color: #353535;
+    margin: auto;
+    padding: 2rem;
+}
+footer p
+{
+    margin: 0.5rem;
+}
+footer a:link
+{
+    color: white;
+}
+
+.footlogo
+{
+    font-family: 'Shrikhand';
+    color: white;
+}
+.footlink
+{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.footer_icon
+{
+    width: 1.5rem;
+}
+
+
+
+
+
+/*------------RESPONSIVE-----------*/
+
+@media all and (min-width: 874px)
+{
+    section
+    {
+        margin: -5rem 5rem 0 5rem;
+        padding: 0 3rem 3rem 3rem;
+    }
+    .column
+    {
+        width: 33%;
+    }
+}
 /*essaie d'animation*/
 .loader {
   position: fixed;

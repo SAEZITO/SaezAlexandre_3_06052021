@@ -398,7 +398,30 @@ footer a:link
     width: 1.5rem;
 }
 
+/*-------animations carte des restaurants-------*/
 
+.card
+{
+    animation: apparition 7s;
+}
+
+@keyframes apparition
+{
+    0%
+    {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50%
+    {
+        opacity: 1;
+        transform: scale(105%);
+    }
+    100%
+    {
+        transform: scale(100%);
+    }
+}
 
 
 /*----------reponsive tablette & desktop--------*/
