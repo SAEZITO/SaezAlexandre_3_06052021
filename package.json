@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "cardinfoion": "",
   "main": "index.js",
-  "scripts": {
-
+  "scripts": {  
+    "sass": "sass --watch ./style.scss:./restaurant.css"
   },
   "repository": {
     "type": "git",

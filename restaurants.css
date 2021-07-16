@@ -66,7 +66,6 @@ section
 .like>i
 {
     position: absolute;
-    right: 1rem;
     font-size: 2rem;
 }
 .flatbg
@@ -107,7 +106,7 @@ section
     width: 100%;
     padding: 0;
 }
-.titlecontent
+h3
 {
     font-weight: 400;
     border-bottom: 3px solid #99E2D0;
