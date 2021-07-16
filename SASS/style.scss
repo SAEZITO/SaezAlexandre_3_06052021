@@ -81,7 +81,7 @@ section
 .like:hover>.flat
 {
     background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition-duration: 500ms;
     transform: scale(1.20)
@@ -91,7 +91,7 @@ section
     display: block;
     opacity: 1;
     background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: scale(1.20);
     transition-duration: 500ms;
@@ -110,7 +110,7 @@ section
 h3
 {
     font-weight: 400;
-    border-bottom: 3px solid #99E2D0;
+    border-bottom: 3px solid $cd__third;
     width: 4rem;
     position: relative;
     bottom: 1rem;
@@ -206,7 +206,7 @@ h3
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #99E2D0;
+    background-color: $cd__third;
     margin: -1rem -5rem -1rem -1rem;
     width: 4rem;
     transition-duration: .5s;
@@ -223,7 +223,7 @@ h3
 }
 .fa-check
 {
-    color: #99E2D0;
+    color: $cd__third;
     border-radius: 100%;
     background-color: white;
     padding: 0.2rem;
@@ -321,9 +321,7 @@ footer a:link
   transition-duration: 2s;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+spin {
   transition-duration: 2s;
 }
 .load {
