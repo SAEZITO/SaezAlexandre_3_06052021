@@ -307,4 +307,19 @@ footer a:link
     {
         width: 33%;
     }
+    footer
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    footer>h2
+    {
+        margin: 0.5rem;
+    }
+    .contentlink:hover{
+        transform: scale(1.25);
+        transition-duration: 300ms;
+    }
 }
