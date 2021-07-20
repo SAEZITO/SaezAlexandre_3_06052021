@@ -1,0 +1,68 @@
+// SECTION SEARCH
+
+// SECTION INTRO
+
+
+
+// SECTION FONCTIONNEMENT
+
+
+// SECTION RESTAURANTS
+.section-restaurants {
+    background-color: $light-grey;
+    padding: map-get($padding-feature-restau, vertical) map-get($padding-feature-restau, horizontal);
+    @include desktop-only { 
+        @include padding-desktop;
+    }
+}
+
+.restaurants-list {
+    @include flexbox(column, unset, unset, unset);
+    @include tablet {
+        @include flexbox(row, unset, unset, wrap);
+    }
+}
+
+.restaurants-card {
+    @include layout-cards;
+    background-color: #fff;
+    flex: auto;
+    position: relative;
+    margin: 9px 0;
+    @include tablet { 
+        flex: 44%;
+        margin: 9px;
+    }
+    &__img {
+        height: 175px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 100% 80%;
+        border-radius: $border-radius-cards $border-radius-cards 0 0;
+    &:nth-child(2) { 
+        object-position: 100% 60%;
+    }
+    @include desktop-only {
+        object-position: 100% 65%;
+    }
+    }
+    &__new {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: $color-tertiary;
+        color: darken($color-tertiary, 40%);
+        height: 30px;
+        width: 80px;
+        @include box-shadow(0.2);
+        @include flexbox(row, center, center, unset);
+        font-size: 0.8em;
+        font-weight: 500;
+        border-radius: 3px;
+    }
+    &__info {
+        @include flexbox(row, space-between, unset, unset);
+        padding: 15px;
+    }
+}
+

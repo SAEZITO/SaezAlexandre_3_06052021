@@ -1,0 +1,143 @@
+.photo-restau {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    @include desktop-only {
+        height: 400px;
+        
+    }
+}
+
+.menu {
+    background-color: $light-grey;
+    border-radius: 35px 35px 0 0 ;
+    margin-top: -50px;
+    position: relative;
+    
+    &__btn {
+        @include flexbox(row, center, unset, unset);
+        padding: 10px 0 60px 0;
+        .btn {
+            width: 195px;
+        }
+    }
+  
+}
+
+.menu-heading {
+    @include flexbox(row, space-between, flex-start, unset);
+    padding: 25px 25px 15px 18px;
+    @include tablet {
+        justify-content: space-evenly;
+    }
+    @include desktop-only {
+        justify-content: center;
+    }
+    &__title {
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+    
+}
+
+.menu-list {
+    opacity:1;
+    @include tablet {
+        @include flexbox(row, center, unset, wrap);
+    }
+}
+
+.menu-content {
+    padding: 15px;
+    animation: menu-fadein ease-in-out 800ms forwards; 
+    opacity:0;
+    @for $i from 1 through 3 {
+        &--#{$i} {
+            animation-delay: 400ms * $i;
+        }
+    }
+    &__heading {
+        font-size: 1.1em;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 5px;
+        margin-left: 5px; 
+    }
+    &__bottombar {
+        width: 40px;
+        height: 3px;
+        background-color: $color-tertiary;
+        margin-bottom: 15px;   
+        margin-left: 5px; 
+    }
+}
+
+.menu-card { 
+    @include layout-cards;
+    @include flexbox(row, flex-start, flex-end, nowrap);
+    background-color: #fff;
+    height: 70px;
+    overflow: hidden;
+    margin: 15px 0;
+    @include tablet {
+        width: 350px; 
+    }
+    
+    &:active .menu-card__check, &:hover .menu-card__check{
+        width: 60px;
+        transform: translateX(0);
+    }
+    &:active .menu-card__icon,  &:hover .menu-card__icon {
+        transform: rotate(1turn);
+        opacity:1;
+    }
+  
+    &__text {
+        overflow:hidden;  
+        margin: 15px 12px;
+        flex:1;
+    }  
+    &__title {
+        font-size:1em;
+        font-weight: 500;
+        @include text-overflow;
+    }
+    &__subtitle { 
+        font-size: 0.9em;
+        font-weight : 300;
+        @include text-overflow;
+    }
+    
+    &__price {
+        font-weight: 700;
+        margin: 15px 20px 15px 0;
+    }
+    &__check { 
+        background-color: $color-tertiary;
+        width: 0;
+        height: 100%;
+        border-radius: 0 $border-radius-cards $border-radius-cards 0;
+        @include flexbox(row, center, center, unset);
+        transition: all 400ms ease-in-out;
+        transform: translateX(100%);
+    }
+    &__icon {
+        color: #fff;
+        font-size: 20px;
+        transition: all 400ms 100ms ease-in-out;
+        opacity:0;
+    } 
+}
+
+@keyframes menu-fadein {
+    0%{
+        opacity:0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+

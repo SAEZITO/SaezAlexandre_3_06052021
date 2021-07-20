@@ -1,0 +1,19 @@
+{
+  "name": "projet3github",
+  "version": "1.0.0",
+  "cardinfoion": "",
+  "main": "index.js",
+  "scripts": {  
+    "sass": "sass --watch ./style.scss:./restaurant.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAEZITO/project3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SAEZITO/project3/issues"
+  },
+  "homepage": "https://github.com/SAEZITO/project3#readme"
+}
