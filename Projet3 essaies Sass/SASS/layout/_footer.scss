@@ -4,19 +4,19 @@ footer {
     padding: 2rem;
     margin: auto;
     @include desktop-only {
-       @include flexbox(row, space-around, center, wrap) 
+       @include flexbox(row, space-around, center, wrap);
        @include padding-desktop;
     }
 }
 
 .footlogo{
     color: white;
-    font-style:'Shrikhand'
+    font-style:'Shrikhand';
 }
 
 .footlink {
-    @include flexbox (row, unset, center, nowrap)
-    color: white
+    @include flexbox (row, unset, center, nowrap);
+    color: white;
     font-weight: 300;
     font-size: 0.9em;
    }
