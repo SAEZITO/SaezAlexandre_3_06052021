@@ -1,26 +1,34 @@
 footer {
     background-color: $dark-grey;
-    color: lighten($dark-grey, 80%);
-    padding: 2rem;
-    margin: auto;
+    color: $color-white;
+    padding: 0 0 1rem 2rem;
+    margin: 0;
+    width: calc(100% - 2rem);
     @include desktop-only {
        @include flexbox(row, space-around, center, wrap);
-       @include padding-desktop;
+       padding: 0 1rem;
+
     }
 }
 
 .footlogo{
-    color: white;
-    font-style:'Shrikhand';
+    font-family:'Shrikhand';
+    margin: 1rem;
+    font-size: 1.7rem;
+    text-align: center;
+    @include desktop-only{
+        width: 100%;
+    }
 }
 
 .footlink {
-    @include flexbox (row, unset, center, nowrap);
-    color: white;
-    font-weight: 300;
-    font-size: 0.9em;
+    @include flexbox (row, flex-start, center, nowrap);
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: $color-white;
    }
 
 .footer_icon {
   width: 1.5rem;
+  margin-right: 0.5rem;
     } 

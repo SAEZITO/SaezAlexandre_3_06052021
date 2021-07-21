@@ -1,6 +1,6 @@
 // PADDINGS
-$padding-feature-restau: (vertical:55px, horizontal:21px);
-$padding-desktop: 10%;
+$padding-feature-restau: (vertical: 2rem, horizontal: 1rem);
+$padding-desktop: 2rem;
 
 // RESPONSIVE
 $breakpoints: (tablet:760px, desktop:1200px);
@@ -16,7 +16,8 @@ $mid-grey: lighten(black, 90%);
 $light-grey: lighten(black, 95%);
 
 // VARIABLES LAYOUT CARDS
-$border-radius-cards: 20px;
+$border-radius-cards: 2rem;
+$border-radius-menu: 3rem 3rem 0 0;
 
 
 

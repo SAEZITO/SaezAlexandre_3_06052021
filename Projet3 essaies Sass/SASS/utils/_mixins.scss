@@ -36,8 +36,12 @@
     flex-wrap: $wrap;
 }
 //MIXIN POSITION
-@mixin position ($pos) {
-    position: $pos;    
+@mixin position ($pos, $top, $right, $bot, $left) {
+    position: $pos;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bot;    
 }
 
 // MIXIN TEXT-OVERFLOW
