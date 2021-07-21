@@ -17,9 +17,6 @@ header
 .fa-arrow-left
 {
     color: black;
-}
-.back
-{
     position: absolute;
     font-size: 1.5rem;
     left: 2rem;
@@ -127,7 +124,6 @@ h3
     border-radius: 1rem;
     cursor: pointer;
     overflow: hidden;
-    max-width: 100%;
     transition-duration: 300ms;
 }
 .cardinfo
@@ -138,22 +134,14 @@ h3
     overflow: hidden;
     width: 100%;
 }
-.cardinfo>div>h4
+.cardinfo>div>p, .cardinfo>div>h4
 {
     margin: 0;
-    max-width: 100%;
     white-space: nowrap; /*pas de retour ligne*/
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cardinfo>div>p
-{
-    margin: 0;
-    max-width: 100%;
-    white-space: nowrap; /*pas de retour ligne*/
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+
 .cardinfo>:nth-child(1)
 {
     max-width: 100%;
@@ -317,6 +305,8 @@ footer a:link
     footer>h2
     {
         margin: 0.5rem;
+        width: 100%;
+        text-align: center;
     }
     .contentlink:hover{
         transform: scale(1.25);
