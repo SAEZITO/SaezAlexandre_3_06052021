@@ -219,14 +219,17 @@ header .titre {
 }
 
 section {
-  /*-------animations apparitions des menus-------*/
-  /*--------animations slider des menus-------*/
-}
-section section {
   margin: -5rem 0 0 0;
   border-radius: 3rem 3rem 0 0;
   background-color: #f6f6f6;
   padding: 0 2rem 3rem 2rem;
+  /*-------animations apparitions des menus-------*/
+  /*--------animations slider des menus-------*/
+}
+@media all and (min-width: 1200px) {
+  section {
+    margin: -5rem 5rem 0 5rem;
+  }
 }
 section .headcontent {
   display: flex;
