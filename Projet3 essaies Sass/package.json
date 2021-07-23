@@ -1,10 +1,11 @@
 {
-  "name": "projet3github",
+  "name": "projet3",
   "version": "1.0.0",
   "cardinfoion": "",
   "main": "index.js",
   "scripts": {  
-    "sass": "sass --watch ./SASS/main.scss:./css/restaurant.css"
+    "sass": "sass --watch ./SASS/main.scss:./css/restaurant.css",
+    "sass:resto":"sass --watch ./SASS/resto.scss:./css/restau.css"
   },
   "repository": {
     "type": "git",
