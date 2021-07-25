@@ -89,21 +89,34 @@ section{
     cursor: pointer;
     transition-duration: 300ms;
 }
-.cardinfo
-{   @include flexbox (column, unset, center, nowrap);
-    @include text-overflow;
-    width: 100%;
+.card
+{
 
+        &-info
+            {   @include flexbox (column, unset, center, nowrap);
+                    @include text-overflow;
+                        width: 100%;
+            }
         &>div>p, &>div>h4
         {
             margin: 0;
             @include text-overflow ;
         }
+
+
     .prix
     {
         display: flex;
         align-items: flex-end;
         margin-right: 0.5rem;
+    }
+    &__icon{
+            color: #99E2D0;
+    border-radius: 100%;
+    background-color: white;
+    padding: 0.2rem;
+    transform: rotate(360deg);
+    transition-duration: .7s;
     }
 }
 
@@ -170,4 +183,3 @@ section{
     transition-duration: .7s;
 }
 
-}
