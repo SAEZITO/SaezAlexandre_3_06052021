@@ -1,4 +1,4 @@
-footer {
+.foot {
     background-color: $dark-grey;
     color: $color-white;
     padding: 0 0 1rem 2rem;
@@ -6,12 +6,10 @@ footer {
     width: calc(100% - 2rem);
     @include desktop-only {
        @include flexbox(row, space-around, center, wrap);
-       padding: 0 1rem;
+       padding: 1rem;
+      }
 
-    }
-}
-
-.footlogo{
+ &__logo{
     font-family:'Shrikhand';
     margin: 1rem;
     font-size: 1.7rem;
@@ -19,16 +17,24 @@ footer {
     @include desktop-only{
         width: 100%;
     }
-}
+ }
 
-.footlink {
+ &__link {
+    color: $color-white;
     @include flexbox (row, flex-start, center, nowrap);
     font-weight: 500;
     font-size: 1.2rem;
     color: $color-white;
+    margin-bottom: 1rem;
+    @include desktop-only{ font-size: 1rem;}
+    &:hover{
+      transform: scale(1.25);
+      transition-duration: 200ms;
+    }
    }
 
-.footer_icon {
+ &er_icon {
   width: 1.5rem;
   margin-right: 0.5rem;
     } 
+}

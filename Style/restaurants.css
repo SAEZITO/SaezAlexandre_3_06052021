@@ -81,7 +81,8 @@ section
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition-duration: 500ms;
-    transform: scale(1.20)
+    transform: scale(1.20);
+    overflow: visible;
 }
 .like:hover>.flatbg
 {
@@ -90,8 +91,9 @@ section
     background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.20);
+    transform: scale(1.1);
     transition-duration: 500ms;
+    overflow: visible;
 }
 .cardcontent
 {

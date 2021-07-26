@@ -14,9 +14,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 62.5%;
-  font: inherit;
-  vertical-align: baseline;
 }
 
 body {
@@ -35,6 +32,32 @@ a:link {
   cursor: pointer;
 }
 
+/*-------animations apparitions des menus-------*/
+.entrees {
+  animation: apparition 2s;
+}
+
+.plats {
+  animation: apparition 3s;
+}
+
+.desserts {
+  animation: apparition 4s;
+}
+
+@keyframes apparition {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
 body {
   font-family: "roboto", sans-serif;
 }
@@ -49,41 +72,37 @@ h3 {
   font-size: 1.5rem;
 }
 
-.btn {
-  font-size: 1em;
-  font-weight: 500;
-  margin: 25px;
-  height: 50px;
-  border-radius: 30px;
-  border: none;
-  background: linear-gradient(175deg, #FF79DA, #9356DC);
-  color: #fff;
-  padding: 0 20px;
-  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
+header {
   position: relative;
-  cursor: pointer;
-  z-index: 1;
+  width: 100%;
 }
-.btn:hover::after {
-  opacity: 1;
-}
-.btn::after {
-  content: "";
+header i {
+  color: black;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 30px;
-  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
-  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 300ms;
+  font-size: 1.5rem;
+  align-self: center;
+  left: 2rem;
+  top: 2.25rem;
+}
+header .head__logo {
+  font-size: 1.5rem;
+  font-family: "Shrikhand";
+  text-align: center;
+  margin: 0;
+  padding: 2rem 0 1rem 0;
 }
 
-.like > i {
-  width: 1.75rem;
+.image {
+  width: 100%;
+  max-height: 30rem;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+@media all and (min-width: 1200px) {
+  .image {
+    height: 40rem;
+  }
 }
 
 .load {
@@ -144,239 +163,157 @@ h3 {
     transform: translateY(15px);
   }
 }
-.image {
-  width: 100%;
-  max-height: 30rem;
-  object-fit: cover;
-  position: relative;
-  z-index: -1;
-}
-
-footer {
-  background-color: #333333;
-  color: #fff;
-  padding: 0 0 1rem 2rem;
-  margin: 0;
-  width: calc(100% - 2rem);
-}
-@media all and (min-width: 1200px) {
-  footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 1rem;
-  }
-}
-
-.footlogo {
-  font-family: "Shrikhand";
-  margin: 1rem;
-  font-size: 1.7rem;
-  text-align: center;
-}
-@media all and (min-width: 1200px) {
-  .footlogo {
-    width: 100%;
-  }
-}
-
-.footlink {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: nowrap;
+.btn {
+  font-size: 1em;
   font-weight: 500;
-  font-size: 1.2rem;
+  margin: 25px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
   color: #fff;
-}
-
-.footer_icon {
-  width: 1.5rem;
-  margin-right: 0.5rem;
-}
-
-header {
+  padding: 0 20px;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
   position: relative;
-  width: 100%;
+  cursor: pointer;
+  z-index: 1;
 }
-header i {
-  color: black;
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
   position: absolute;
-  font-size: 1.5rem;
-  align-self: center;
-  left: 2rem;
-  top: 2.25rem;
-}
-header .titre {
-  font-size: 1.5rem;
-  font-family: "Shrikhand";
-  text-align: center;
-  margin: 0;
-  padding: 2rem 0 1rem 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 30px;
+  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms;
 }
 
-section {
+.btn-cmd {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2rem;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: none;
+  background: linear-gradient(175deg, #FF79DA, #9356DC);
+  color: #fff;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+.btn-cmd:hover::after {
+  opacity: 1;
+}
+.btn-cmd::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 3rem;
+  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 300ms;
+}
+
+.like > i {
+  width: 1.75rem;
+}
+
+.page {
   margin: -5rem 0 0 0;
   border-radius: 3rem 3rem 0 0;
-  background-color: #f6f6f6;
+  background-color: #f2f2f2;
   padding: 0 2rem 3rem 2rem;
-  /*-------animations apparitions des menus-------*/
-  /*--------animations slider des menus-------*/
 }
 @media all and (min-width: 1200px) {
-  section {
+  .page {
     margin: -5rem 5rem 0 5rem;
+    padding: 0 3rem 3rem 3rem;
   }
 }
-section .headcontent {
+@media all and (min-width: 760px) {
+  .page {
+    margin: -5rem 3rem 0 3rem;
+    padding: 0 2rem 2rem 2rem;
+  }
+}
+.page__headcontent {
   display: flex;
-  align-items: center;
-  font-family: "Shrikhand";
-  font-size: 1rem;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: unset;
   padding: 1rem 0;
 }
-section .like {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #99E2D0;
+.page__title {
+  font-family: "Shrikhand";
+  font-size: 1rem;
 }
-section .like > i {
-  position: absolute;
-  font-size: 2rem;
-}
-section .flatbg {
-  opacity: 0;
-  transition-duration: 500ms;
-}
-section .flat {
-  transition-duration: 500ms;
-}
-section .like:hover > .flat {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition-duration: 500ms;
-  transform: scale(1.2);
-}
-section .like:hover > .flatbg {
-  display: block;
-  opacity: 1;
-  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transform: scale(1.2);
-  transition-duration: 500ms;
-}
-section .cardcontent {
+.page-content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: unset;
+  align-items: center;
   flex-wrap: wrap;
 }
-section .cardcontent .column {
-  width: 100%;
-  padding: 0;
+.page-menu {
+  padding: 1rem;
+  width: calc(33% - 2rem);
 }
-@media all and (min-width: 1200px) {
-  section .cardcontent .column {
-    width: 33%;
-  }
-}
-section .cardcontent h3 {
-  font-weight: 400;
-  border-bottom: 3px solid #99E2D0;
-  width: 4rem;
-  position: relative;
-  bottom: 1rem;
-}
-section .menu {
+.page-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: unset;
-  flex-wrap: nowrap;
-  border-radius: 2rem;
-  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.1);
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  padding: 1rem;
-  margin: 1rem 0;
-  background-color: #fff;
-  cursor: pointer;
-  transition-duration: 300ms;
-}
-section .cardinfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: unset;
   align-items: center;
-  flex-wrap: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+  flex-wrap: unset;
   width: 100%;
+  border-radius: 2rem;
 }
-section .cardinfo > div > p, section .cardinfo > div > h4 {
-  margin: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-}
-section .cardinfo .prix {
+.page__btn {
   display: flex;
-  align-items: flex-end;
-  margin-right: 0.5rem;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: unset;
+  flex-wrap: unset;
 }
-section .entrees {
-  animation: apparition 2s;
-}
-section .plats {
-  animation: apparition 3s;
-}
-section .desserts {
-  animation: apparition 4s;
-}
-@keyframes apparition {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(105%);
-  }
-  100% {
-    transform: scale(100%);
-  }
-}
-section .selectmenu {
+
+/*--------animations slider des menus -------*/
+.card-select {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: unset;
   background-color: #99E2D0;
   margin: -1rem -5rem -1rem -1rem;
   width: 4rem;
   transition-duration: 0.5s;
 }
-section .menu:hover > .selectmenu {
+
+.card-select:hover > .card__icon {
   transition-duration: 0.5s;
   margin: -1rem -1rem -1rem 0rem;
 }
-section .menu:hover > .selectmenu > i {
+
+.card-select:hover > .card__icon > i {
   transform: rotate(0deg);
   transition-duration: 0.7s;
 }
-section .fa-check {
+
+.fa-check {
   color: #99E2D0;
   border-radius: 100%;
   background-color: white;
@@ -385,4 +322,58 @@ section .fa-check {
   transition-duration: 0.7s;
 }
 
-/*# sourceMappingURL=restaurant.css.map */
+.foot {
+  background-color: #333333;
+  color: #fff;
+  padding: 0 0 1rem 2rem;
+  margin: 0;
+  width: calc(100% - 2rem);
+}
+@media all and (min-width: 1200px) {
+  .foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+}
+.foot__logo {
+  font-family: "Shrikhand";
+  margin: 1rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+@media all and (min-width: 1200px) {
+  .foot__logo {
+    width: 100%;
+  }
+}
+.foot__link {
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+@media all and (min-width: 1200px) {
+  .foot__link {
+    font-size: 1rem;
+  }
+}
+.foot__link:hover {
+  transform: scale(1.25);
+  transition-duration: 200ms;
+}
+.footer_icon {
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/*# sourceMappingURL=pages.css.map */

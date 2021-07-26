@@ -1,174 +1,62 @@
-section{
-    margin: -5rem 0 0 0;
+.page{
+
+	margin: -5rem 0 0 0;
     border-radius: 3rem 3rem 0 0;
-    background-color: #f6f6f6;
+    background-color: $light-grey;
     padding: 0 2rem 3rem 2rem;
     @include desktop-only{
-        margin: -5rem 5rem 0 5rem;
-}
-
-.headcontent
-{
-    display: flex;
-    align-items: center;
-    font-family: 'Shrikhand';
-    font-size: 1rem;
-    justify-content: space-between;
-    padding: 1rem 0;
-}
-.like
-{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #99E2D0;
-}
-.like>i
-{
-    position: absolute;
-    font-size: 2rem;
-}
-.flatbg
-{
-    opacity: 0;
-    transition-duration: 500ms;
-}
-.flat
-{
-    transition-duration: 500ms;
-}
-.like:hover>.flat
-{
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition-duration: 500ms;
-    transform: scale(1.20)
-}
-.like:hover>.flatbg
-{
-    display: block;
-    opacity: 1;
-    background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transform: scale(1.20);
-    transition-duration: 500ms;
-}
-.cardcontent
-{
-            @include flexbox (row, center, space-between, wrap);
-        .column
-            {
-                    width: 100%;
-                    padding: 0;
-                    @include desktop-only{
-                        width: 33%;
-                    }
-            }
-        h3
-            {
-                    font-weight: 400;
-                    border-bottom: 3px solid #99E2D0;
-                    width: 4rem;
-                    position: relative;
-                    bottom: 1rem;
-            }
-        }
-.menu
-{
-    @include flexbox(row, space-between, unset, nowrap);
-    @include layout-cards;
-    @include text-overflow;
-    position: relative;
-    padding: 1rem;
-    margin: 1rem 0;
-    background-color: $color-white;
-    cursor: pointer;
-    transition-duration: 300ms;
-}
-.card
-{
-
-        &-info
-            {   @include flexbox (column, unset, center, nowrap);
-                    @include text-overflow;
-                        width: 100%;
-            }
-        &>div>p, &>div>h4
-        {
-            margin: 0;
-            @include text-overflow ;
-        }
-
-
-    .prix
-    {
-        display: flex;
-        align-items: flex-end;
-        margin-right: 0.5rem;
+    	    margin: -5rem 5rem 0 5rem;
+    		padding: 0 3rem 3rem 3rem;
     }
-    &__icon{
-            color: #99E2D0;
-    border-radius: 100%;
-    background-color: white;
-    padding: 0.2rem;
-    transform: rotate(360deg);
-    transition-duration: .7s;
+    @include tablet{
+    	    margin: -5rem 3rem 0 3rem;
+    		padding: 0 2rem 2rem 2rem;
     }
+
+	&__headcontent{
+		@include flexbox (row, space-between, center, unset);
+    	padding: 1rem 0;
+	}
+	&__title{		
+		font-family: 'Shrikhand';
+    	font-size: 1rem;
+    }
+	&-content{
+		@include flexbox (row, unset, center, wrap);
+	}
+	&-menu{
+		padding: 1rem;
+		width: calc(33% - 2rem);
+	}
+	&-card{
+		@include flexbox (row, space-between, center, unset);
+		width: 100%;
+		border-radius: $border-radius-card;
+	}
+	&__btn
+	{
+		@include flexbox (unset, center, unset, unset)
+	}
 }
 
-/*-------animations apparitions des menus-------*/
 
-.entrees
-{
-    animation: apparition 2s;
-}
-.plats
-{
-    animation: apparition 3s;
-}
-.desserts
-{
-    animation: apparition 4s;
-}
-@keyframes apparition
-{
-    0%
-    {
-        opacity: 0;
-        transform: scale(0);
-    }
-    50%
-    {
-        opacity: 1;
-        transform: scale(105%);
-    }
-    100%
-    {
-        transform: scale(100%);
-    }
-}
-/*--------animations slider des menus-------*/
 
-.selectmenu
+/*--------animations slider des menus -------*/
+
+.card-select
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #99E2D0;
+   @include flexbox (row, center, center, unset);
+    background-color: $color-tertiary;
     margin: -1rem -5rem -1rem -1rem;
     width: 4rem;
     transition-duration: .5s;
 }
-.menu:hover>.selectmenu
+.card-select:hover>.card__icon
 {
     transition-duration: .5s;
     margin: -1rem -1rem -1rem 0rem;
 }
-.menu:hover>.selectmenu>i
+.card-select:hover>.card__icon>i
 {
     transform: rotate(0deg);
     transition-duration: .7s;

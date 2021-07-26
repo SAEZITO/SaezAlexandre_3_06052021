@@ -5,4 +5,7 @@
     object-fit: cover;
     position: relative;
     z-index: -1;
+    @include desktop-only {
+        height: 40rem;
+    }
 }
