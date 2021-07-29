@@ -1,31 +1,55 @@
 .load {
+    &er{
     position: fixed;
-    z-index: 2; 
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+    @include flexbox (column, center, center, unset);
     width: 100%;
     height: 100%;
     background: $light-grey;
-    @include flexbox(column, center, center, unset);
-    animation: fadeout 3s forwards;
-    &__food {
-        width: 180px;
-        animation: cloche 1200ms ease-in-out alternate infinite;
+    animation: fadeout 5s forwards;
+    cursor: wait;
+    }
+    &__img {
+        display: flex;
+        width: 20rem;
+        height: 20rem;
+        animation: cloche 5s ease-in-out alternate infinite;
         position: relative;  
     }
-    &__spinner {
-        width: 30px;
-        height: 30px;
-        margin: 50px;
-        background-color: lighten($color-tertiary,10%);
-        border: $color-primary solid 3px;
+    &__spinner {    
+        border: 5px solid $color-primary;
+        border-top: 5px solid $color-tertiary;
         border-radius: 50%;
-        animation: spin 1200ms cubic-bezier(.4,0,.08,1) infinite; 
-        border-color: $color-primary transparent $color-secondary transparent;
+        width: 50px;
+        height: 50px;
+        animation: spin 5s ease-in-out;
+        animation-iteration-count: 3;
     }    
       
+}
+
+
+@keyframes fadeout { 
+   0% {
+        opacity: 1;
+        z-index: 1;
+    }
+    70%{
+        opacity: 1;
+        z-index: 1;
+    }    
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes cloche {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(20px);
+    }
 }
 
 @keyframes spin {
@@ -36,22 +60,3 @@
       transform: rotate(360deg);
     }
   }
-
-@keyframes fadeout { 
-   80% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-@keyframes cloche {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(15px);
-    }
-}

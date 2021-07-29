@@ -23,8 +23,8 @@
 }
 
 @mixin layout-cards {
-    border-radius: $border-radius-cards; 
-    @include box-shadow(0.1);
+    border-radius: $border-radius-card; 
+    @include box-shadow(0.2);
 }
 
 // MIXIN FLEXBOX

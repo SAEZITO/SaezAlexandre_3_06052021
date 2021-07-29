@@ -1,25 +1,7 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
 body {
-  display: inline-block;
   font-size: 62.5%;
   width: 100%;
+  margin: 0;
 }
 
 .page-container {
@@ -59,37 +41,41 @@ a:link {
   }
 }
 body {
-  font-family: "roboto", sans-serif;
+  font-family: "Roboto", Arial, Verdana, sans-serif;
 }
 
 h1, h2 {
+  font-family: "Shrikhand";
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
   font-size: 1.7rem;
-  font-weight: 900;
 }
 
 h3 {
-  font-weight: 700;
   font-size: 1.5rem;
 }
 
 header {
   position: relative;
   width: 100%;
+  padding: 1rem;
 }
-header i {
+header .head__icon {
   color: black;
   position: absolute;
   font-size: 1.5rem;
-  align-self: center;
   left: 2rem;
-  top: 2.25rem;
+  top: 1.75rem;
 }
 header .head__logo {
-  font-size: 1.5rem;
   font-family: "Shrikhand";
   text-align: center;
   margin: 0;
-  padding: 2rem 0 1rem 0;
 }
 
 .image {
@@ -105,39 +91,58 @@ header .head__logo {
   }
 }
 
-.load {
+.loader {
   position: fixed;
-  z-index: 2;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: #f2f2f2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: unset;
-  animation: fadeout 3s forwards;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f2;
+  animation: fadeout 5s forwards;
+  cursor: wait;
 }
-.load__food {
-  width: 180px;
-  animation: cloche 1200ms ease-in-out alternate infinite;
+.load__img {
+  display: flex;
+  width: 20rem;
+  height: 20rem;
+  animation: cloche 5s ease-in-out alternate infinite;
   position: relative;
 }
 .load__spinner {
-  width: 30px;
-  height: 30px;
-  margin: 50px;
-  background-color: #c1ede2;
-  border: #9356DC solid 3px;
+  border: 5px solid #9356DC;
+  border-top: 5px solid #99E2D0;
   border-radius: 50%;
-  animation: spin 1200ms cubic-bezier(0.4, 0, 0.08, 1) infinite;
-  border-color: #9356DC transparent #FF79DA transparent;
+  width: 50px;
+  height: 50px;
+  animation: spin 5s ease-in-out;
+  animation-iteration-count: 3;
 }
 
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    z-index: 1;
+  }
+  70% {
+    opacity: 1;
+    z-index: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes cloche {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -146,24 +151,7 @@ header .head__logo {
     transform: rotate(360deg);
   }
 }
-@keyframes fadeout {
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-@keyframes cloche {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(15px);
-  }
-}
-.btn {
+.btn-resto {
   font-size: 1em;
   font-weight: 500;
   margin: 25px;
@@ -176,12 +164,11 @@ header .head__logo {
   box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   cursor: pointer;
-  z-index: 1;
 }
-.btn:hover::after {
+.btn-resto:hover::after {
   opacity: 1;
 }
-.btn::after {
+.btn-resto::after {
   content: "";
   position: absolute;
   top: 0;
@@ -228,8 +215,41 @@ header .head__logo {
   transition: opacity 300ms;
 }
 
+.like {
+  position: relative;
+  margin: 1rem;
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: unset;
+  cursor: pointer;
+}
 .like > i {
-  width: 1.75rem;
+  position: absolute;
+  font-size: 2rem;
+}
+.like > .__empty {
+  color: #99E2D0;
+  transition-duration: 500ms;
+}
+.like > .__full {
+  opacity: 0;
+  transition-duration: 500ms;
+}
+
+.like:hover > .__empty {
+  opacity: 0;
+  transition-duration: 500ms;
+}
+.like:hover > .__full {
+  opacity: 1;
+  transition-duration: 1s;
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.1);
+  z-index: 1;
 }
 
 .page {
@@ -258,29 +278,52 @@ header .head__logo {
   flex-wrap: unset;
   padding: 1rem 0;
 }
-.page__title {
-  font-family: "Shrikhand";
-  font-size: 1rem;
-}
 .page-content {
   display: flex;
   flex-direction: row;
-  justify-content: unset;
-  align-items: center;
+  justify-content: space-between;
+  align-items: unset;
   flex-wrap: wrap;
+  padding: 0;
 }
 .page-menu {
-  padding: 1rem;
-  width: calc(33% - 2rem);
+  width: 100%;
+}
+.page-menu > h3 {
+  font-weight: 400;
+  border-bottom: 3px solid #99E2D0;
+  width: 4rem;
+  position: relative;
+  bottom: 1rem;
+}
+@media all and (min-width: 1200px) {
+  .page-menu {
+    width: calc(100% / 3);
+  }
 }
 .page-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: unset;
   flex-wrap: unset;
-  width: 100%;
+  position: relative;
+  margin: 1rem 0;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition-duration: 300ms;
   border-radius: 2rem;
+  box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.page-card:hover > .card-select {
+  transition-duration: 0.5s;
+  margin: -1rem -1rem -1rem 0rem;
+}
+.page-card:hover > .card-select > i {
+  transform: rotate(0deg);
+  transition-duration: 0.7s;
 }
 .page__btn {
   display: flex;
@@ -290,7 +333,42 @@ header .head__logo {
   flex-wrap: unset;
 }
 
-/*--------animations slider des menus -------*/
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card-info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.card-info > h4 {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.card-info > p {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.card-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: flex-end;
+  flex-wrap: unset;
+  margin-right: 0.5rem;
+}
 .card-select {
   display: flex;
   flex-direction: row;
@@ -302,23 +380,23 @@ header .head__logo {
   width: 4rem;
   transition-duration: 0.5s;
 }
+.card__icon {
+  color: #99E2D0;
+  border-radius: 100%;
+  background-color: #fff;
+  padding: 0.2rem;
+  transform: rotate(360deg);
+  transition-duration: 0.7s;
+}
 
-.card-select:hover > .card__icon {
+/*--------animations slider des menus -------*/
+.card:hover > .card__icon {
   transition-duration: 0.5s;
   margin: -1rem -1rem -1rem 0rem;
 }
 
-.card-select:hover > .card__icon > i {
+.page-card:hover > i .card__icon {
   transform: rotate(0deg);
-  transition-duration: 0.7s;
-}
-
-.fa-check {
-  color: #99E2D0;
-  border-radius: 100%;
-  background-color: white;
-  padding: 0.2rem;
-  transform: rotate(360deg);
   transition-duration: 0.7s;
 }
 

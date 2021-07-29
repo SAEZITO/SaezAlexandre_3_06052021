@@ -16,58 +16,106 @@
 	&__headcontent{
 		@include flexbox (row, space-between, center, unset);
     	padding: 1rem 0;
-	}
+	
 	&__title{		
-		font-family: 'Shrikhand';
-    	font-size: 1rem;
-    }
+    	@include desktop-only{
+    	}
+    	}
+	}
+
 	&-content{
-		@include flexbox (row, unset, center, wrap);
+		@include flexbox (row, space-between, unset, wrap);
+		padding: 0;
 	}
 	&-menu{
-		padding: 1rem;
-		width: calc(33% - 2rem);
+		width: 100%;
+			&>h3{
+					    font-weight: 400;
+   	 					border-bottom: 3px solid $color-tertiary;
+    					width: 4rem;
+    					position: relative;
+    					bottom: 1rem;
+			}
+		@include desktop-only{
+		width: calc(100% / 3);
+		}
 	}
 	&-card{
-		@include flexbox (row, space-between, center, unset);
-		width: 100%;
-		border-radius: $border-radius-card;
+		@include flexbox (row, space-between, unset, unset);
+		position: relative;
+    	margin: 1rem 0;
+		padding: 1rem;
+    	cursor: pointer;
+    	overflow: hidden;
+    	transition-duration: 300ms;
+		@include layout-cards;
+		background-color: $color-white;
+			&:hover>.card-select{
+				    transition-duration: .5s;
+   					margin: -1rem -1rem -1rem 0rem;
+   					&>i{
+   						    transform: rotate(0deg);
+    						transition-duration: .7s;
+   					}
+			}
 	}
 	&__btn
 	{
-		@include flexbox (unset, center, unset, unset)
+		@include flexbox (unset, center, unset, unset);
 	}
 }
 
+.card{
+	@include flexbox(row, space-between, center, nowrap);
+	width: 100%;
+	font-size: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
+	&-info{
+		@include text-overflow;
+			&>h4{
+				margin: 0;
+				@include text-overflow;
+
+			}
+			&>p{
+				margin: 0;
+				@include text-overflow;
+			}
+	}
+	&-price{
+		@include flexbox (row, unset, flex-end, unset);
+		margin-right: 0.5rem;
+	}
+	&-select{
+   		@include flexbox (row, center, center, unset);
+    	background-color: $color-tertiary;
+    	margin: -1rem -5rem -1rem -1rem;
+    	width: 4rem;
+    	transition-duration: .5s;
+	}
+	&__icon{
+    	color: $color-tertiary;
+    	border-radius: 100%;
+    	background-color: $color-white;
+    	padding: 0.2rem;
+    	transform: rotate(360deg);
+    	transition-duration: .7s;	
+	}
+}
 
 /*--------animations slider des menus -------*/
 
-.card-select
-{
-   @include flexbox (row, center, center, unset);
-    background-color: $color-tertiary;
-    margin: -1rem -5rem -1rem -1rem;
-    width: 4rem;
-    transition-duration: .5s;
-}
-.card-select:hover>.card__icon
+.card:hover>.card__icon
 {
     transition-duration: .5s;
     margin: -1rem -1rem -1rem 0rem;
 }
-.card-select:hover>.card__icon>i
+.page-card:hover>i .card__icon
 {
     transform: rotate(0deg);
     transition-duration: .7s;
 }
-.fa-check
-{
-    color: #99E2D0;
-    border-radius: 100%;
-    background-color: white;
-    padding: 0.2rem;
-    transform: rotate(360deg);
-    transition-duration: .7s;
-}
+
 

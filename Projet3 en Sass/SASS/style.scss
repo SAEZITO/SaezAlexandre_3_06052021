@@ -5,13 +5,13 @@
 @import "./base/base";
 @import "./base/typography";
 
-@import "./components/buttons";
-@import "./components/heart-icon";
-@import "./components/loading-spinner";
-@import "./components/image";
-
-@import "./layout/footer";
 @import "./layout/header";
 
+@import "./components/image";
+@import "./components/loading-spinner";
+@import "./components/buttons";
+@import "./components/heart-icon";
+
 @import "./pages/index";
-@import "./pages/menus";
+
+@import "./layout/footer";
