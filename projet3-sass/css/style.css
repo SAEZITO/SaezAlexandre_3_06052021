@@ -198,8 +198,15 @@ header .head__logo {
   cursor: pointer;
 }
 .like > i {
+  display: flex;
+  flex-direction: unset;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
   position: absolute;
   font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
 }
 .like > .heart__empty {
   color: #99E2D0;
@@ -221,7 +228,7 @@ header .head__logo {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  transform: scale(1.1);
+  transform: scale(1.15);
   z-index: 1;
 }
 
@@ -232,8 +239,9 @@ header .head__logo {
   align-items: center;
   flex-wrap: nowrap;
   background-color: #e6e6e6;
-  padding: 1rem 0;
+  padding: 1rem;
   margin: 0;
+  width: 100%;
 }
 .nav__resa {
   display: flex;
@@ -264,6 +272,12 @@ header .head__logo {
   padding: 0.5rem;
   background-color: #e6e6e6;
   border: none;
+}
+.search.textposition::focus {
+  border-color: black;
+}
+.search.textposition::active {
+  border-color: black;
 }
 .search.iconsearch {
   display: none;
