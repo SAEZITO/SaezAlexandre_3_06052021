@@ -251,10 +251,22 @@ header .head__logo {
 }
 
 .search {
-  padding: 1rem;
-  align-self: center;
-  opacity: 1;
-  position: relative;
+  font-size: 1rem;
+  color: #333333;
+}
+.search.iconposition {
+  margin: 0;
+}
+.search.textposition {
+  font-family: "Roboto", Arial, Verdana, sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #e6e6e6;
+  border: none;
+}
+.search.iconsearch {
+  display: none;
 }
 
 .fonct {
