@@ -11,31 +11,32 @@
                 font-size: 2rem;
        }
     
-     &>.__empty{
+     &>.heart__empty{
                         color: $color-tertiary;
                         transition-duration: 500ms;
             }
     
-     &>.__full{
+     &>.heart__full{
                         opacity: 0;
-                        transition-duration: 500ms;
+                        color: $color-tertiary;
+                        transition-duration: 200ms;
             }
   
 }
 
 
 .like:hover{
-            &>.__empty{
+            &>.heart__empty{
                         opacity: 0;
                         transition-duration: 500ms;
             }
-            &>.__full{
+            &>.heart__full{
                         opacity: 1;
-                        transition-duration: 1s;
-                        background: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+                        transition-duration: 2s;
+                        background: -webkit-gradient(linear, left top, left bottom, from($color-secondary), to($color-primary));
                                     -webkit-background-clip: text;
                                     -webkit-text-fill-color: transparent;
-                        transform: scale(1.05);
+                        transform: scale(1.1);
                         z-index: 1;
             }
 

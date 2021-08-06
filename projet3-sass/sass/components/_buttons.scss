@@ -1,54 +1,40 @@
-    .btn-resto {
+    .btn-resa {
+        @include box-shadow(20%);
         font-size : 1rem;
         font-weight: 500;
-        margin: 2rem;
-        padding: 1rem 2rem;
-        border-radius: 3rem;
-        border: none;
-        background: linear-gradient(175deg, $color-secondary, $color-primary);
-        color: $color-white;
-        @include box-shadow(0.2);
-        position: relative;
-        cursor: pointer;
-        &:hover {
-            &::after {
-                opacity:1;
-            }
-    }
-        &::after { 
-            position: relative;
-            border-radius: 3rem;
-            background: linear-gradient(175deg, lighten($color-secondary,5) 0%, lighten($color-primary,5) 100%);
-            @include box-shadow(0.5);
-            opacity:0;
-            transition: opacity 300ms;
-        }
-        
-    }
-    .btn-cmd{
-        font-size : 1rem;
-        font-weight: 500;
-        margin: 2rem;
+        margin: 2rem 0;
         padding: 1rem;
         border-radius: 3rem;
         border: none;
         background: linear-gradient(175deg, $color-secondary, $color-primary);
-        color: $color-white ;
-        @include box-shadow(0.2);
+        color: $color-white;
         position: relative;
         cursor: pointer;
-        z-index: 1;
-        &:hover {
-            &::after {
-                opacity:1;
-            }
-    }
-        &::after { 
+        &:hover { 
+            @include box-shadow(50%);
             position: relative;
             border-radius: 3rem;
             background: linear-gradient(175deg, lighten($color-secondary,5) 0%, lighten($color-primary,5) 100%);
-            @include box-shadow(0.3);
-            opacity:0;
-            transition: opacity 300ms;
+        }
+        
+    }
+    .btn-cmd{
+        @include box-shadow(20%);
+        font-size : 1rem;
+        font-weight: 500;
+        margin: 2rem;
+        padding: 0.5rem 2rem;
+        border-radius: 3rem;
+        border: none;
+        background: linear-gradient(175deg, $color-secondary, $color-primary);
+        color: $color-white ;
+        position: relative;
+        cursor: pointer;
+        z-index: 1;
+        &:hover { 
+            @include box-shadow(50%);
+            position: relative;
+            border-radius: 3rem;
+            background: linear-gradient(175deg, lighten($color-secondary,10%) 0%, lighten($color-primary,10%) 100%);
         }
     }

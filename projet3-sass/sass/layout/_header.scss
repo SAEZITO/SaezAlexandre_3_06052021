@@ -1,18 +1,18 @@
 header {
-        position: relative;
+        @include flexbox(row, unset, center, unset);
         padding: 1rem;
-    &.head__icon
+    .head__icon
     {
         color: black;
-        position: absolute;
         font-size: 1.5rem;
-        left: 2rem;
-        top: 1.75rem;
+        margin-right: 2rem;
     }
-    &.head__logo
+    .head__logo
     {
+        @include desktop-only {margin: 0;}
         font-family: 'Shrikhand';
         text-align: center;
+        flex: 1;
         margin: 0;
     }
 }

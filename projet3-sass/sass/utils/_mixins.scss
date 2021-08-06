@@ -25,6 +25,7 @@
 @mixin layout-cards {
     border-radius: $border-radius-card; 
     @include box-shadow(0.2);
+    background-color: white;
 }
 
 // MIXIN FLEXBOX
@@ -36,12 +37,10 @@
     flex-wrap: $wrap;
 }
 //MIXIN POSITION
-@mixin position ($pos, $top, $right, $bot, $left) {
+@mixin position ($pos, $top, $right) {
     position: $pos;
     top: $top;
-    left: $left;
     right: $right;
-    bottom: $bot;    
 }
 
 // MIXIN TEXT-OVERFLOW
