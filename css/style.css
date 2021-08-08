@@ -208,7 +208,7 @@ header .head__logo {
   width: 3rem;
   height: 3rem;
 }
-.like > .heart__empty {
+.like > .heart--empty {
   color: #99E2D0;
   transition-duration: 500ms;
 }
@@ -218,7 +218,7 @@ header .head__logo {
   transition-duration: 200ms;
 }
 
-.like:hover > .heart__empty {
+.like:hover > .heart--empty {
   opacity: 0;
   transition-duration: 500ms;
 }
