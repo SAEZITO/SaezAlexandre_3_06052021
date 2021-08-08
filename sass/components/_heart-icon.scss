@@ -6,7 +6,6 @@
     margin: 1rem;
     padding: 0;
     cursor: pointer;
-    color: $color-tertiary;
      &>i{
                 @include flexbox (unset, center, center, nowrap);
                 position: absolute;
@@ -17,13 +16,13 @@
     
      &>.heart--empty{
                         color: $color-tertiary;
-                        transition-duration: 500ms;
+                        transition-duration: 300ms;
             }
     
      &>.heart--full{
                         opacity: 0;
                         color: $color-tertiary;
-                        transition-duration: 200ms;
+                        transition-duration: 300ms;
             }
   
 }
