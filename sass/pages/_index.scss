@@ -166,6 +166,9 @@
             @include flexbox (row, space-between, center, nowrap);
             margin: 0;
             padding: 0.5rem;
+                &>a{
+                    width: 100%;
+                }
         }
 
     }
