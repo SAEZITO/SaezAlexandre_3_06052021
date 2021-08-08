@@ -6,6 +6,7 @@
     margin: 1rem;
     padding: 0;
     cursor: pointer;
+    color: $color-tertiary;
      &>i{
                 @include flexbox (unset, center, center, nowrap);
                 position: absolute;
