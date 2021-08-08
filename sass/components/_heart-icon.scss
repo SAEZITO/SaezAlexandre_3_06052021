@@ -1,10 +1,10 @@
 
 .like
 {
+    @include flexbox(unset, center, center, unset);
     position: relative;
     margin: 1rem;
     padding: 0;
-    @include flexbox(unset, center, center, unset);
     cursor: pointer;
      &>i{
                 @include flexbox (unset, center, center, nowrap);
