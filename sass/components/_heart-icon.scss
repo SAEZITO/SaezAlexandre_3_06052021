@@ -29,7 +29,7 @@
 
 
 .like:hover{
-            &>.heart__empty{
+            &>.heart--empty{
                         opacity: 0;
                         transition-duration: 500ms;
             }
